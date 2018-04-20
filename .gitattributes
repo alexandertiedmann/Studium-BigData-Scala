@@ -1,0 +1,5 @@
+Uebung1_sbt/.settings/* linguist-vendored
+Uebung1_sbt/bin/* linguist-vendored
+Uebung1_sbt/project/* linguist-vendored
+Uebung1_sbt/target/* linguist-vendored
+Uebung1_sbt/.* linguist-vendored
