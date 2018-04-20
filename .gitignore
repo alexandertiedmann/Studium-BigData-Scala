@@ -1,3 +1,6 @@
 *.class
 *.log
 *.idea
+*/*.class
+*/*.log
+*/.idea
