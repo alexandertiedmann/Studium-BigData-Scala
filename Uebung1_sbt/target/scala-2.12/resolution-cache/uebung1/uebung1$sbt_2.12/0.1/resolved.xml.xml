@@ -4,7 +4,7 @@
 		module="uebung1$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180420104049"
+		publication="20180420131005"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

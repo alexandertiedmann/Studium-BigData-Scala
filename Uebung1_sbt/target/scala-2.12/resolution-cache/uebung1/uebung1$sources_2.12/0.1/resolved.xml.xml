@@ -4,7 +4,7 @@
 		module="uebung1$sources_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180420104100"
+		publication="20180420131015"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

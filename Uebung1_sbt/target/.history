@@ -20,3 +20,5 @@ all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sb
 all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/products {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/test:products
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/Tiedmann/AppData/Local/Temp/sbt-structure.xml; session clear-all
 all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/products {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/Tiedmann/AppData/Local/Temp/sbt-structure.xml; session clear-all
+all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/products {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung1_sbt/}uebung1_sbt/test:products
