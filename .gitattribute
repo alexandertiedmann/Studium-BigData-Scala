@@ -1,2 +1,5 @@
-Uebung1_sbt/src/* linguist-vendored
-Uebung1_sbt/src/* linguist-documentation
+Uebung1_sbt/src/*  linguist-documentation
+Uebung1_sbt/src/*  linguist-language
+Uebung1_sbt/src/*  linguist-vendored
+Uebung1_sbt/src/*  linguist-generated
+Uebung1_sbt/src/*  linguist-detectable
