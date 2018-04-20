@@ -1,0 +1,3 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung1_sbt\src\test\scala\test\RationalTest.scala:13:11: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m    assert(x.value === 0.5)[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="uebung1"
+		module="uebung1$sbt_2.12"
+		revision="0.1"
+		conf="provided"
+		confs="compile, runtime, test, provided, optional"
+		date="20180420104049"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>
