@@ -1,0 +1,62 @@
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\list\IntList.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set(C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Cons.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\common\package.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Empty.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\IntList.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Application$.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Empty$.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Application.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\common\package$.class, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes\list\Cons$.class)[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(list.IntList)[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set(C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\common\package.scala, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\list\Cons.scala, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\list\IntList.scala, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\list\Application.scala, C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\main\scala\list\Empty.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 5 sources: invalidated sources (5) exceeded 50.0% of all sources[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 5 Scala sources to C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.1.3:compile for Scala 2.12.5[0m
+[0m[[0m[0minfo[0m] [0m[0mNon-compiled module 'compiler-bridge_2.12' for Scala 2.12.5. Compiling...[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating plain compiler interface for 2.12.5.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > Arguments: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	-nowarn[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-d[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2b9e0492[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.5.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_3e3c8b86\jars\org.scala-sbt\compiler-interface\compiler-interface-1.1.3.jar;C:\Users\Tiedmann\AppData\Local\Temp\sbt_3e3c8b86\jars\org.scala-sbt\util-interface\util-interface-1.1.3.jar;C:\Users\Tiedmann\AppData\Local\Temp\sbt_3e3c8b86\srcs\org.scala-sbt\compiler-bridge_2.12\compiler-bridge_2.12-1.1.3-sources.jar;C:\Users\Tiedmann\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.12.5.jar;C:\Users\Tiedmann\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.12.5.jar;C:\Users\Tiedmann\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\bundles\scala-xml_2.12-1.0.6.jar;C:\Users\Tiedmann\.ivy2\cache\jline\jline\jars\jline-2.14.5.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\API.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Analyzer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\CallbackGlobal.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\ClassName.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Command.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Compat.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\CompilerInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\ConsoleInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\DelegatingReporter.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Dependency.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\ExtractAPI.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\ExtractUsedNames.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\GlobalHelpers.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\InteractiveConsoleFactory.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\InteractiveConsoleHelper.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\InteractiveConsoleInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\InteractiveConsoleResponse.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\JavaUtils.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\LocalToNonLocalClass.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\LocateClassFile.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Log.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\Message.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\AppData\Local\Temp\sbt_2cf4a2b6\xsbt\ScaladocInterface.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0m      [0m
+[0m[[0m[0minfo[0m] [0m[0m  Compilation completed in 18.499s.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.1.3:compile for Scala 2.12.5[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 187c2aae for Scala compiler version 2.12.5[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.5.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\target\scala-2.12\classes;C:\Users\Tiedmann\.ivy2\cache\junit\junit\jars\junit-4.11.jar;C:\Users\Tiedmann\.ivy2\cache\org.hamcrest\hamcrest-core\jars\hamcrest-core-1.3.jar;C:\Users\Tiedmann\.ivy2\cache\org.scalactic\scalactic_2.12\bundles\scalactic_2.12-3.0.5.jar;C:\Users\Tiedmann\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.12.5.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 24.144622018 s[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m

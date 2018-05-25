@@ -3,7 +3,7 @@ package uebung3
 object Uebung3 {
   def main(args: Array[String]): Unit = {
     print(quersumme(123))
-    print(fibo(100))
+    //print(fibo(100))
   }
 
   def quersumme(zahl:Int): Int={
@@ -14,10 +14,10 @@ object Uebung3 {
     querinner(zahl, 0)
   }
 
-  def fibo(zahl: Int): BigInt ={
-    def innerfibo(zahl1: BigInt, zahl2:BigInt, counter:BigInt): BigInt={
-
-    }
-
-  }
+  //def fibo(zahl: Int): BigInt ={
+  //  def innerfibo(zahl1: BigInt, zahl2:BigInt, counter:BigInt): BigInt={
+  //    println("test")
+  //  }
+  //
+  //}
 }

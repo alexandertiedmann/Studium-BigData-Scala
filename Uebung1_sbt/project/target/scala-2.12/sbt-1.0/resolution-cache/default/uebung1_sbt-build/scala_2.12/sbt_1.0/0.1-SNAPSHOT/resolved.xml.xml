@@ -4,7 +4,7 @@
 		module="uebung1_sbt-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20180413132622"
+		publication="20180525115751"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

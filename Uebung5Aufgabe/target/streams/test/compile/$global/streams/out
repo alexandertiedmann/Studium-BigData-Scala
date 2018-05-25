@@ -1,0 +1,45 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:30:10: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m			assert("Cons(9,Cons(3,Cons(2,Cons(5,Cons(4,Empty)))))"===l1.toString)[0m
+[0m[[0m[31merror[0m] [0m[0m			      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:26:26: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("toString Method") {[0m
+[0m[[0m[31merror[0m] [0m[0m	                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:38:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l2===l1.insert(11))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:34:23: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("insert Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:46:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l5===l4.insertSorted(8))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:42:24: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("insertS Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:54:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l5===l4.insertSO(8))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:50:25: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("insertSO Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:62:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l3===l2.delete(2))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:58:23: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("delete Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:70:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l5===l6.insertionSort)[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:66:34: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("insertsertionSort Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:78:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l1_double===l1.map(x=>2*x))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:74:22: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	test("map - Method"){[0m
+[0m[[0m[31merror[0m] [0m[0m	                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Tiedmann\CloudStation\Git\Big Data\Uebung5Aufgabe\src\test\scala\test\ListTest.scala:86:12: could not find implicit value for parameter pos: org.scalactic.source.Position[0m
+[0m[[0m[31merror[0m] [0m[0m	    assert(l1_double===l1.mapInside(x=>2*x))[0m
+[0m[[0m[31merror[0m] [0m[0m	          ^[0m
