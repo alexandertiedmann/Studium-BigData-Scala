@@ -1,6 +1,8 @@
 
 *.class
 */*.class
+*.iml
+*/*.iml
 *.log
 */*.log
 */*.idea

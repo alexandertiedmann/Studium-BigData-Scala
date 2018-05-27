@@ -1,4 +1,0 @@
-;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Tiedmann/AppData/Local/Temp/sbt-structure.xml; session clear-all
-all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung5Aufgabe/}uebung5aufgabe/products {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung5Aufgabe/}uebung5aufgabe/test:products
-;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/Tiedmann/AppData/Local/Temp/sbt-structure.xml; session clear-all
-all {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung5Aufgabe/}uebung5aufgabe/products {file:/C:/Users/Tiedmann/CloudStation/Git/Big%20Data/Uebung5Aufgabe/}uebung5aufgabe/test:products
