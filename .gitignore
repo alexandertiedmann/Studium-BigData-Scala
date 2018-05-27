@@ -4,7 +4,11 @@
 */*.iml
 */*.log
 */*.idea
-*/*.class
+*/.class
+*/.classpath
+*/.classpath/
+*/.project
+*/.settings/
 */*.log
 *.log
 */dist/
