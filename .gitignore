@@ -1,25 +1,16 @@
 
-*.class
 */*.class
-*.iml
 */*.iml
-*.log
 */*.log
 */*.idea
-*.ida
 */*.class
-*.class
 */*.log
 *.log
 */dist/
 */target/
-*/target/*
 */lib_managed/
 */src_managed/
-*/project/boot/
-*/project/target/*
-*/project/target/
-*/project/plugins/project/
+*/project/
 */.history
 */.cache
 */.lib/
