@@ -71,18 +71,11 @@ object Application {
     lmap.mapValues(_.reverse)
   }
 
-  //mit immutable Map und fold Left
-  def groupBy_ImmutableMap_foldLeft[T, U](in : Iterable[T]) (fun:T=>U): Map[U, List[T]]= {
-    in.foldLeft(Map(): Map[U, List[T]])
-      ((map,e)=> map.updated(fun(e), e::map.getOrElse(fun(e),List)))
-  }
-
   //main zum testen
   def main(args: Array[String]): Unit = {
     val l = List(3,5,3,5,4,2,6,8)
     println(groupByMutable(l, (x:Int)=> x%2 == 0))
     println(groupByImmutable(l, (x:Int)=> x%2 == 0))
     println(groupBy(l)((x: Int)=> x%2 == 0))
-    println(groupBy_ImmutableMap_foldLeft(l)((x:Int)=> x%2 == 0))
   }
 }
