@@ -1,8 +1,16 @@
 package assignment1
 
+import list.implementation._
 import list.traits.IntList
 
 object Problems {
+
+  def sum(item: IntList): Double = {
+    item match {
+      case Empty => 0
+      case _ => item.head + sum(item.tail)
+    }
+  }
 
   /**
     * Given the weight in kilograms, that a bag can hold, and a list of items represented by their weights
@@ -12,7 +20,9 @@ object Problems {
     * @param itemWeight weights of the items in grams
     * @return minimum number of bags required
     */
-  def minBagsCount(capacity: Int, itemWeight: IntList): Int = ???
+  def minBagsCount(capacity: Int, itemWeight: IntList): Int = {
+    math.ceil((sum(itemWeight) / 1000) / capacity).toInt
+  }
 
   /**
     * Given a amount of money and a list of coin values,
@@ -26,7 +36,10 @@ object Problems {
     * @param coins possible coins
     * @return number of possible ways the change can be returned
     */
-  def countChange(money: Int, coins: IntList): Int = ???
+  def countChange(money: Int, coins: IntList): Int = {
+    ???
+    //val maxCoin = coins.insertionSort.get(coins.size)
+  }
 
   /**
     * A postman has a list of delivery addresses, for which he and his colleague are responsible.
@@ -54,12 +67,16 @@ object Problems {
     * @param addresses the address numbers
     * @return the faster path: true if even, false if odd
     */
-  def shouldTakeEvenAddresses(addresses: IntList): Boolean = ???
+  def shouldTakeEvenAddresses(addresses: IntList): Boolean = {
+    val even = addresses.filter(x => x % 2 == 0).insertionSort
+    val odd = addresses.filter(x => x % 2 != 0).insertionSort
+    ((even.get(even.size - 1) - even.get(0)) / 2 + even.size * 2) <= ((odd.get(odd.size - 1) - odd.get(0)) / 2 + odd.size * 2)
+  }
 
 
   //Solving the following problem is optional, as it is a lot harder than the previous ones.
   // It is not a required part of the assignment, but will make all tests ins ProblemsTest turn green.
-  
+
   /**
     * The postman has recognized, that addresses which are adjacent to the one
     * in front of which he stops with his delivery bike, take less time and
@@ -72,5 +89,34 @@ object Problems {
     * @param addresses the address numbers
     * @return the faster path: true if even, false if odd
     */
-  def shouldTakeEvenAddressesExtended(addresses: IntList): Boolean = ???
+  def shouldTakeEvenAddressesExtended(addresses: IntList): Boolean = {
+    def calcDistance(objectives: IntList, sum: Int): Int = {
+      objectives.tail match {
+        case Empty => print("Sum: " + sum + "\n")
+          sum + 0
+        case _ => if (objectives.tail.head - objectives.head == 2)
+          calcDistance(objectives.tail, sum + 1)
+        else
+          calcDistance(objectives.tail, sum + 2)
+      }
+    }
+
+    print("Even:\n")
+    val even = addresses.filter(x => x % 2 == 0).insertionSort
+    val evendistaddr = (even.get(even.size - 1) - even.get(0)) / 2
+    val evendist = evendistaddr + calcDistance(even, 0)
+    print("Even list: " + even + "\n")
+    print("Evendistance: " + evendist + "\n")
+
+    print("\n")
+
+    print("Odd:\n")
+    val odd = addresses.filter(x => x % 2 != 0).insertionSort
+    val odddistaddr = (odd.get(odd.size - 1) - odd.get(0)) / 2
+    val odddist = odddistaddr + calcDistance(odd, 0)
+    print("Odd list: " + odd + "\n")
+    print("Odddistance: " + odddist + "\n")
+
+    evendist <= odddist
+  }
 }
