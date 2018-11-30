@@ -113,9 +113,9 @@ abstract class SinglyLinkedIntList extends IntList {
 
   override def insertSorted(elem: Int): IntList = {
     this match {
-      case Empty => new Cons(elem, Empty)
-      case Cons(head, tail) if (head >= elem) => new Cons(elem, new Cons(head, tail))
-      case Cons(head, tail) => new Cons(head, tail.insertSorted(elem))
+      case Empty => Cons(elem, Empty)
+      case Cons(head, tail) if (head >= elem) => Cons(elem, Cons(head, tail))
+      case Cons(head, tail) => Cons(head, tail.insertSorted(elem))
     }
   }
 

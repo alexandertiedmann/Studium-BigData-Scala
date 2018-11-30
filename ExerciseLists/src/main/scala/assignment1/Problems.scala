@@ -21,7 +21,7 @@ object Problems {
     * @return minimum number of bags required
     */
   def minBagsCount(capacity: Int, itemWeight: IntList): Int = {
-    math.ceil((sum(itemWeight) / 1000) / capacity).toInt
+    math.ceil((sum(itemWeight)) / capacity).toInt
   }
 
   /**
