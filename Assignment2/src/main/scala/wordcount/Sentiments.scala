@@ -37,21 +37,8 @@ class Sentiments(sentiFile: String) {
   }
 
   def getDocumentSplitByPredicate(filename: String, predicate:String=>Boolean): List[(Int, List[String])] = {
-    val pMap = Processing.getData(filename)
-    //print(
-    //pMap.filter(x => !predicate(x._2)).zipWithIndex.map(l => (l._2, l._1._2))
-    //.toList)
-
-    print(
-      pMap.groupBy(x => !predicate(x._2))
-      .toList
-    )
-
-    val wordCount = 1;
-    pMap.flatMap(a => proc.getWords(a._2 )).grouped(wordCount).zipWithIndex.map{ // Erstelle eine neue Liste und gruppiere diese anhand
-      // vorgegebenem WordCount und Index anhaengen
-      l => (l._2+1, l._1) // Attribute noch umdrehen
-    }.toList
+    print("skip")
+    ???
   }
 
   def analyseSentiments(l: List[(Int, List[String])]): List[(Int, Double, Double)] = {

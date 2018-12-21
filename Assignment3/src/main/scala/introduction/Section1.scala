@@ -48,7 +48,7 @@ object Section1 {
       * - What happens if you omit collect?
       */
 
-    val entriesToSums:Array[(String,Int)] = rdd.reduceByKey((x, n) => (x + n)).collect()
+    val entriesToSums:Array[(String,Int)] = rdd.reduceByKey((x, n) => x + n).collect()
 
     println(s"Entries to Sums: ${entriesToSums.toList}")
 
@@ -58,7 +58,7 @@ object Section1 {
       *
       * Hint:In the map operation, map the values to identity
       */
-    val entriesToCounts:Array[(String,Int)] = ???
+    val entriesToCounts:Array[(String,Int)] = rdd.reduceByKey((x,n) => x + n).collect()
     println(s"Entries to Counts: ${entriesToCounts.toList}")
 
     /**

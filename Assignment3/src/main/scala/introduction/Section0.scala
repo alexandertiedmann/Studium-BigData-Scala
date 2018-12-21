@@ -29,7 +29,7 @@ object Section0 {
       * See https://spark.apache.org/docs/latest/rdd-programming-guide.html#initializing-spark
       * for more info about how exactly do this.
       */
-    val sparkContext: SparkContext= new SparkContext(new SparkConf().setAppName("name").setMaster("master"))
+    val sparkContext: SparkContext= new SparkContext(new SparkConf().setAppName("name").setMaster("local[*]"))
 
     /**
       * There are a lot of other properties which can be set. You can check them out at
