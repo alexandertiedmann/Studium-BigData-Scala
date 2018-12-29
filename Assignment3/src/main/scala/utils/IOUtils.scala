@@ -25,7 +25,8 @@ object IOUtils {
     * @example getPath("Test.txt",true) => file:target/scala-2.12/test-classes/"Test.txt"
     */
   private def getPath(path: String, isAResource: Boolean): String = {
-    ???
+    if (!isAResource) path
+    else getClass.getClassLoader.getResource(path).getPath
   }
 
   /**
@@ -41,7 +42,8 @@ object IOUtils {
     * https://spark.apache.org/docs/latest/rdd-programming-guide.html#external-datasets
     */
   def RDDFromFile(path: String, isAResource: Boolean = true): RDD[String] = {
-    ???
+    val newpath = IOUtils.getPath(path, isAResource)
+    SparkContext.getOrCreate().textFile(newpath)
   }
 
   /**

@@ -67,7 +67,7 @@ object Section1 {
       *
       * Hint:In the mapValues operation, map to identity
       */
-    val entriesToCounts2:Array[(String,Int)] = ???
+    val entriesToCounts2:Array[(String,Int)] = rdd.reduceByKey((x,n) => x + n).collect()
     println(s"Entries to Counts MapValues: ${entriesToCounts2.toList}")
 
 
@@ -76,7 +76,7 @@ object Section1 {
       * Use the built in countByKey
       *
       */
-    val entriesToCounts3 = ???
+    val entriesToCounts3 = rdd.countByKey()
     println(s"Entries to Counts CountByKey: ${entriesToCounts3}")
 
     //Checkout the internal implementation of countByKey for PairRDDs

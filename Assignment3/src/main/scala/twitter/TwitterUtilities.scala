@@ -68,10 +68,61 @@ object TwitterUtilities {
     * https://alvinalexander.com/scala/how-to-cast-objects-class-instance-in-scala-asinstanceof
     */
   def parse(jsonString: String): Option[Tweet] = {
-
+    def getUser(x: Map[String, Any]): String ={
+      //Auslesen des Users (Map)
+      var userNameString = x.get("user").getOrElse("user", "")
+      var userName:String =
+        try {
+          var userName = userNameString.asInstanceOf[Map[String, String]] //aus Some eine Map machen
+              .getOrElse("name", "") //aus der Map den Namen ziehen
+            //println(userName)
+            userName
+        }catch{
+          case e: Exception => {
+            //println("String to Instance failed: " + userNameString)
+            ""
+          }
+      }
+      userName
+    }
+    def getdate(x:Map[String, Any]): OffsetDateTime={
+      val stringDate = x.get("created_at") //Some aus JSON ziehen
+        .getOrElse("created_at", "").toString //String aus Some machen
+      val date = getTwitterDate(stringDate)
+      if (getTwitterDate("").equals(date)){
+        return null
+      }else{
+        return date
+      }
+    }
+    def getText(x:Map[String, Any]): String={
+      x.get("text").getOrElse("text", "").toString //Some aus JSON, daraus wieder einen String
+    }
+    def getLang(x:Map[String, Any]): String={
+      x.get("lang").getOrElse("lang", "").toString //Some aus JSON, daraus wieder einen String
+    }
+    def checkisTweet(date: OffsetDateTime, userName: String): Boolean={
+      var check = true
+      if (date == null) check = false
+      if (userName.equals("") || userName == null || userName == None) check = false
+      return check
+    }
     val tweet = JsonUtils.parseJson(jsonString)
     tweet match {
-      case Some(map: Map[String, Any]) => ???
+      case Some(x: Map[String, Any]) =>
+        if (x.toString().contains("\"delete\":")){
+          return None
+        }
+        val date = getdate(x)
+        val text = getText(x)
+        val lang = getLang(x)
+        val userName = getUser(x)
+        //println("User: " + date, text, lang, userName)
+        if (checkisTweet(date, userName.toString)){
+          val tweets = new Tweet(date: OffsetDateTime, userName: String, text: String, lang: String)
+          Some(tweets.asInstanceOf[Tweet])
+        }
+        else None
       case None => None
     }
   }
@@ -81,7 +132,7 @@ object TwitterUtilities {
       OffsetDateTime.parse(date, dtf)
     } catch {
       case e: Exception =>
-        println(date)
+        //println(date)
         OffsetDateTime.now
     }
   }

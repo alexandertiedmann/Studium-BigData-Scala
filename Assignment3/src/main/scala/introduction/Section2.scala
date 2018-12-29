@@ -1,5 +1,6 @@
 package introduction
 
+import javafx.scene.chart.XYChart.Series
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.Row
@@ -43,9 +44,10 @@ object Section2 {
       */
 
     /*If you are unsure how the data looks like, you could print the first entry and check it out*/
-    //println(rdd.take(1).head)
+    println(rdd.take(1).head)
 
-    val entriesACount = ???
+    var counter = 0
+    val entriesACount = rdd.map(f => f.getString(0) match { case "a" => counter = counter + 1})
     println(s"c(A) = $entriesACount")
 
     /**
@@ -55,8 +57,8 @@ object Section2 {
       *
       * Make sure that all results look plausible (pay attention to the datatypes)
       */
-    val entriesToSums= ???
-    //println(s"Entries to Sums: ${entriesToSums.toList}")
+    val entriesToSums= rdd.map(f => f.getString(0) -> f.getInt(1)).countByKey()
+    println(s"Entries to Sums: ${entriesToSums.toList}")
 
     /**
       * Convert the row rdd back to a (string,int) tuple rdd using the map operation

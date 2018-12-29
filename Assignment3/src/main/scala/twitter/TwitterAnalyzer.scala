@@ -12,28 +12,38 @@ class TwitterAnalyzer(tData: RDD[Tweet]) {
    * Write a function that counts the number of tweets using the german language
    */
   def getGermanTweetsCount: Long = {
-   ???
+   tData.filter(t => t.lang.equals("de"))
+     .count()
   }
 
   /*
    * Extracts the texts of all german tweets (all tweets with the "de" locale)
    */
   def getGermanTweetTexts: Array[String] = {
-    ???
+    tData.filter(t => t.lang.equals("de"))
+      .map(t => t.text)
+      .collect()
   }
 
   /**
     * Counts the number of unique german users (all users that tweeted using the "de" locale)
     */
   def numberOfGermanTweetsPerUser: Array[(String, Int)] = {
-    ???
+    tData.filter(t => t.lang.equals("de"))
+      .map(t => t.userName)
+      .countByValue()
+      .map(f => (f._1,f._2.toInt))
+      .toArray
   }
 
   /**
     * Counts the number of tweets per country
     */
   def numberOfTweetsPerCountry: Array[(String, Int)] = {
-    ???
+    tData.map(t => t.lang)
+      .countByValue()
+      .map(f => (f._1,f._2.toInt))
+      .toArray
   }
 
   /**
@@ -49,6 +59,7 @@ class TwitterAnalyzer(tData: RDD[Tweet]) {
     */
   def getTopTenEnglishHashtags: List[(String, Int)] = {
     ???
+    //tData.filter(t => t.lang.equals("en")).map(t => t.text)
   }
 }
 
