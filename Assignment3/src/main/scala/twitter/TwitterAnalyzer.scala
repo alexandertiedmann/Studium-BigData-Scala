@@ -58,8 +58,16 @@ class TwitterAnalyzer(tData: RDD[Tweet]) {
     * and Ordering.by
     */
   def getTopTenEnglishHashtags: List[(String, Int)] = {
-    ???
-    //tData.filter(t => t.lang.equals("en")).map(t => t.text)
+    tData.filter(t => t.lang.equals("en"))  //englische herausfiltern
+      .map(t => t.text) //Die Texte in einen String
+      .map(s => TwitterAnalyzer.getHashtags(s)) //den gesamten Wortschatz in die getHashtags Methode
+      .filter(l => l.nonEmpty)  // nach nicht leeren filtern
+      .toLocalIterator.toList.flatten //Die RDD[List()] in List[String] umwandeln
+      .groupBy(identity)  // nach Wort gruppieren
+      .mapValues(_.size)  // zaehlen und unique
+      .toList             //wieder in eine Liste
+      .sortWith(_._2 > _._2)  //Liste high to low sortieren
+      .take(10)   //hoechsten 10 eintraaege herausnehmen
   }
 }
 
