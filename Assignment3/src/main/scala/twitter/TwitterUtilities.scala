@@ -90,9 +90,9 @@ object TwitterUtilities {
         .getOrElse("created_at", "").toString //String aus Some machen
       val date = getTwitterDate(stringDate)
       if (getTwitterDate("").equals(date)){
-        return null
+        null
       }else{
-        return date
+        date
       }
     }
     def getText(x:Map[String, Any]): String={
@@ -105,7 +105,7 @@ object TwitterUtilities {
       var check = true
       if (date == null) check = false
       if (userName.equals("") || userName == null || userName == None) check = false
-      return check
+      check
     }
     val tweet = JsonUtils.parseJson(jsonString)
     tweet match {
