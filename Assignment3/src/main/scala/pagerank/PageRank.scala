@@ -1,5 +1,6 @@
 package pagerank
 
+import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import pagerank.models.Page
 
@@ -53,13 +54,41 @@ object PageRank {
     * join and flatMap might be useful
     *
     * - What happens if a page is never linked to? ex. {A->B, B->B}
-    *   make sure that (A,0) is also in the result, so A doesn't get lost
+    * make sure that (A,0) is also in the result, so A doesn't get lost
     *
     * - also pay attention that A->{} should be treated as A->{A} and contribute (A,1)
     *
     */
   def computeContributions(ranks: RDD[(String, Double)], links: RDD[(String, Set[String])]): RDD[(String, Double)] = {
-   ???
+    val sc = SparkContext.getOrCreate()
+
+    // wenn Set leer -> fuellen mit eigener Seite
+    val newLinks:RDD[(String, Set[String])] = links.map( l =>
+      if (l._2.isEmpty) (l._1,Set(l._1))
+      else (l._1,l._2)
+    )
+
+    val test = newLinks.flatMap(r => List.fill(r._2.size)(r))
+    test.foreach(x => print("test: " + x + "\n"))
+    /*
+    val cloned = newLinks.map( x =>
+      if (x._2.size == 1) x
+      else {
+        List.fill(x._2.size)(x)
+      }.apply(x._2.size)
+    )*/
+
+    /*
+    val value: RDD[(String, Double)] = ranks.map(r =>
+        newLinks.map(l =>
+          if (l._2(r._1)) //wenn seite r im set von l
+            (l._1, r._2 * (1/l._2.size))
+          else (l._1, r._2)
+        )
+    )
+    value.foreach(x => print(x))
+    */
+    ranks
   }
 
   /**
@@ -73,7 +102,9 @@ object PageRank {
     *
     **/
   def computeNewRanksFromContributions(contributions: RDD[(String, Double)], tNorm: Double, t: Double): RDD[(String, Double)] = {
-    ???
+    val onet = 1 - t
+    val newCon = contributions.reduceByKey((a,b) => a + b) //zusammenfuehren der gleichen Links und Summieren der Cons
+    newCon.map(x => (x._1,tNorm+onet*x._2)) //Berechnung der Ranks
   }
 
   /**
@@ -87,7 +118,10 @@ object PageRank {
     *
     **/
   def computeDifference(ranks: RDD[(String, Double)], newRanks: RDD[(String, Double)]): Double = {
-    ???
+    val joined = ranks.join(newRanks) //zusammenfuehren der beiden RDDs
+      .map(s => (s._1,s._2._2 - s._2._1))  //Subtrahieren der alten von den neuen Ranks
+    val values = joined.map(s => s._2) //extrahieren der Unterschiede
+    values.sum() //summieren der Unterschiede
   }
 
   /**
@@ -103,7 +137,26 @@ object PageRank {
     * For some examples see the test cases
     */
   def extractLinksFromPages(pages: RDD[Page]): RDD[(String, Set[String])] = {
-   ???
+    //step 1
+    pages.foreach(x => print("before " + x + " \n"))
+    val extract1 = pages
+      .map(p => (p.title, //titel der Seite nehmen
+        p.links.map(x => x.title).toSet)) //links der Seite nehmen
+    extract1.foreach(x => print("extract1 " + x + "\n"))
+    //step 2
+    val extract2 = pages
+      .map(p => p.links.map(x => x))  //extrahieren der link-Listen
+      .flatMap(x => x.map(x => x.title)) //extrahieren der einzelnen Seiten aus den Listen
+      .map(x => (x,Set.empty[String])) //in endform giessen
+    extract2.foreach(s => print("extract2 " + s + "\n"))
+    //step 3
+    val extracted = extract1.union(extract2) //zusammenfuehren
+    extracted.foreach(s => print("final " + s + "\n"))
+
+    //step 4
+    //nimm die Werte des ersten gefundenen Eintrags (alle anderen aus Schritt 2 sind eh leer)
+    val finalExtract = extracted.reduceByKey((a,b) => a)
+    finalExtract
   }
 
 }
