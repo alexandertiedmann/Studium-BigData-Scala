@@ -1,6 +1,5 @@
 package pagerank
 
-import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import pagerank.models.Page
 
@@ -60,35 +59,26 @@ object PageRank {
     *
     */
   def computeContributions(ranks: RDD[(String, Double)], links: RDD[(String, Set[String])]): RDD[(String, Double)] = {
-    val sc = SparkContext.getOrCreate()
-
     // wenn Set leer -> fuellen mit eigener Seite
-    val newLinks:RDD[(String, Set[String])] = links.map( l =>
+    /*val newLinks:RDD[(String, Set[String])] = links.map( l =>
       if (l._2.isEmpty) (l._1,Set(l._1))
       else (l._1,l._2)
-    )
-
-    val test = newLinks.flatMap(r => List.fill(r._2.size)(r))
-    test.foreach(x => print("test: " + x + "\n"))
-    /*
-    val cloned = newLinks.map( x =>
-      if (x._2.size == 1) x
-      else {
-        List.fill(x._2.size)(x)
-      }.apply(x._2.size)
     )*/
-
-    /*
-    val value: RDD[(String, Double)] = ranks.map(r =>
-        newLinks.map(l =>
-          if (l._2(r._1)) //wenn seite r im set von l
-            (l._1, r._2 * (1/l._2.size))
-          else (l._1, r._2)
-        )
-    )
-    value.foreach(x => print(x))
-    */
-    ranks
+    val contributions = ranks.
+      join(links).
+      flatMap {
+        //(A,(B,C))  -> x._2._1
+        case (k, (rank, urls)) =>
+          val n = urls.size.toDouble
+          val m = urls.map(url => url -> rank / n).toMap
+          if (m.isEmpty)
+          //if no links, 1
+            Map(k -> rank * 1.0)
+          else
+          //if nothing links, still in result
+            m.updated(k, m.getOrElse(k, 0.0))
+      }
+    contributions
   }
 
   /**

@@ -62,7 +62,7 @@ class TwitterAnalyzer(tData: RDD[Tweet]) {
       .map(t => t.text) //Die Texte in einen String
       .map(s => TwitterAnalyzer.getHashtags(s)) //den gesamten Wortschatz in die getHashtags Methode
       .filter(l => l.nonEmpty)  // nach nicht leeren filtern
-      .toLocalIterator.toList.flatten //Die RDD[List()] in List[String] umwandeln
+      .toLocalIterator.toList.flatten //Die RDD[List()] in List[String] umwandeln //am Ende erst
       .groupBy(identity)  // nach Wort gruppieren
       .mapValues(_.size)  // zaehlen und unique
       .toList             //wieder in eine Liste
